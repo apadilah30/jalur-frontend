@@ -2,17 +2,20 @@ import logo from '../assets/images/logo/logo-main.png';
 import iconEng from '../assets/images/logo/icon-eng.png';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { solutionsData } from '../data/solutions';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="flex flex-col gap-3 md:gap-0 md:flex-row items-center justify-between px-6 md:px-20 py-4 md:py-6 bg-white shadow-lg sticky top-0 z-50 md:max-h-[100px]">
       <div className={`flex ${open ? 'justify-end' : 'justify-between'} md:items-center gap-3 w-full md:w-auto`}>
-        <a href="/" className={`transition-transform hover:scale-105 ${open ? 'hidden' : ''}`}>
+        <Link to="/" className={`transition-transform hover:scale-105 ${open ? 'hidden' : ''}`}>
           <img src={logo} alt="Jalur Logo" className="w-20 h-20" />
-        </a>
+        </Link>
         <button
           className="md:hidden p-2 rounded-md text-gray-800 transition-transform hover:scale-110 active:scale-95"
           onClick={() => setOpen(!open)}
@@ -31,19 +34,19 @@ const Navbar = () => {
       <ul className={`md:flex flex-col md:flex-row space-y-4 md:space-y-0 gap-8 list-none m-0 p-0 transition-all duration-300 ease-in-out w-full md:w-auto ${open ? 'max-h-[100vh]' : 'max-h-0 md:max-h-none hidden md:block'
         }`}>
         <li>
-          <a href="#" className="text-orange-500 bg-orange-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-orange-100 hover:scale-105 flex items-center gap-1">
+          <Link to="/" className={`${location.pathname === '/' ? 'text-orange-500 bg-orange-50' : 'text-gray-800'}  px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-orange-100 hover:scale-105 flex items-center gap-1`}>
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="text-gray-800 hover:bg-orange-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center gap-1">
+          <Link to="/about" className={`${location.pathname === '/about' ? 'text-orange-500 bg-orange-50' : 'text-gray-800'} hover:bg-orange-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center gap-1`}>
             About
-          </a>
+          </Link>
         </li>
         <li className="relative">
           <button 
             onClick={() => setSolutionsOpen(!solutionsOpen)}
-            className="text-gray-800 hover:bg-orange-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center justify-between gap-1 w-full md:w-auto"
+            className={`${location.pathname.startsWith('/solutions') ? 'text-orange-500 bg-orange-50' : 'text-gray-800'} hover:bg-orange-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center justify-between gap-1 w-full md:w-auto`}
           >
             Solutions
             <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -55,21 +58,13 @@ const Navbar = () => {
               ? 'opacity-100 translate-y-0 scale-100 max-h-96' 
               : 'opacity-0 -translate-y-2 scale-95 max-h-0 md:pointer-events-none overflow-hidden'
           }`}>
-            <li className={`transition-all duration-200 delay-75 ${solutionsOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
-              <a href="#" className="block px-4 py-3 text-gray-800 hover:bg-orange-100 md:hover:bg-gray-50 transition-colors duration-200 md:rounded-lg">
-                Solution 1
-              </a>
-            </li>
-            <li className={`transition-all duration-200 delay-100 ${solutionsOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
-              <a href="#" className="block px-4 py-3 text-gray-800 hover:bg-orange-100 md:hover:bg-gray-50 transition-colors duration-200 md:rounded-lg">
-                Solution 2
-              </a>
-            </li>
-            <li className={`transition-all duration-200 delay-150 ${solutionsOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
-              <a href="#" className="block px-4 py-3 text-gray-800 hover:bg-orange-100 md:hover:bg-gray-50 transition-colors duration-200 md:rounded-lg">
-                Solution 3
-              </a>
-            </li>
+            {solutionsData.map((solution, index) => (
+              <li key={index} className={`transition-all duration-200 delay-75 ${solutionsOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
+                <Link to={`/solutions/${solution.name.toLowerCase().replace(/ /g, '-')}`} className="block px-4 py-3 text-gray-800 hover:bg-orange-100 md:hover:bg-gray-50 transition-colors duration-200 md:rounded-lg">
+                  {solution.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </li>
         <li>

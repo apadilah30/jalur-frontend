@@ -19,7 +19,7 @@ const clients = [
 ];
 
 const Clients = () => (
-  <section className="bg-gray-100 py-12 md:py-24 text-left px-6 md:px-16 flex md:flex-row w-full justify-between" id="clients">
+  <section className="bg-gray-100 py-12 md:py-24 text-left px-6 md:px-16 flex flex-col md:flex-row w-full justify-between" id="clients">
     <div className="mb-8 md:max-w-[30vw]">
       <h2 className="text-5xl font-semibold text-[#1a2536] mb-2">Clients and partners we’ve helped</h2>
       <p className="text-lg text-semibold text-gray-500">Across industries and regions, empowering their growth with AI and ICT innovation.</p>

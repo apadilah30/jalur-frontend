@@ -15,34 +15,39 @@ export const solutionsData = [
 		description:
 			"MineFinder combines advanced Artificial Intelligence with geoscience data to accelerate and optimize mining exploration. By analyzing vast geological datasets, the system identifies high-potential mineral zones faster, reduces exploration risks, and supports more sustainable decision-making for large-scale mining operations.",
 		image: solution1,
-    logo: gaia,
+		logo: gaia,
+		name: "gAIa"
 	},
 	{
 		title: "EcoTrack - Environmental Monitoring System",
 		description:
 			"EcoTrack leverages IoT sensors and AI analytics to monitor environmental parameters in real-time, ensuring compliance and sustainability for resource industries.",
 		image: solution2,
-    logo: daina,
+		logo: daina,
+		name: "dAIna"
 	},
 	{
 		title: "ResourceFlow - Integrated Resource Management",
 		description:
 			"ResourceFlow streamlines resource allocation and logistics using smart algorithms, improving operational efficiency and reducing costs.",
 		image: solution3,
-    logo: fraia,
+		logo: fraia,
+		name: "frAIa"
 	},
 	{
 		title: "SafetyNet - AI-Driven Safety Platform",
 		description:
 			"SafetyNet uses predictive analytics to identify potential hazards and enhance workplace safety in industrial environments.",
 		image: solution4,
-    logo: laiia,
+		logo: laiia,
+		name: "lAIia"
 	},
 	{
 		title: "InsightOps - Operations Intelligence Dashboard",
 		description:
 			"InsightOps provides actionable insights and reporting for decision-makers, integrating data from multiple sources for holistic operational visibility.",
 		image: solution5,
-    logo: rhaia,
+		logo: rhaia,
+		name: "rhAIa"
 	},
 ];
