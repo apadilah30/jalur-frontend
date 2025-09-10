@@ -54,16 +54,16 @@ const Footer = () => (
         </ul>
       </div>
     </div>
-    <div className="bg-[#111a2b] text-white py-4 px-12 flex flex-wrap justify-between items-center text-sm mt-8">
-      <span className="w-1/3">© 2025 All Right Reserved - PT. JALIN USAHA BERSAMA (JALUR)</span>
-      <ul className="list-none p-0 m-0 flex flex-row gap-2 justify-between align-center items-center w-1/3">
+    <div className="bg-[#111a2b] text-white gap-3 md:gap-2 py-4 px-12 md:px-12 w-full md:w-auto flex flex-col md:flex-row flex-wrap md:justify-between items-center text-sm mt-8">
+      <span className="w-full md:w-1/3">© 2025 All Right Reserved - PT. JALIN USAHA BERSAMA (JALUR)</span>
+      <ul className="list-none p-0 m-0 flex flex-col md:flex-row gap-2 justify-between align-center md:items-center w-full md:w-1/3">
         <li className="mb-3"><a href="#" className="text-white">Terms of Service</a></li>
         <li className="mb-3"><a href="#" className="text-white">Privacy Policy</a></li>
         <li className="mb-3"><a href="#" className="text-white">Sitemap</a></li>
         <li className="mb-3"><a href="#" className="text-white">Privacy Choices</a></li>
         <li className="mb-3"><a href="#" className="text-white">FAQs</a></li>
       </ul>
-      <span className="w-1/3 text-right">🌐 English</span>
+      <span className="w-full md:w-1/3 md:text-right">🌐 English</span>
     </div>
   </footer>
 );

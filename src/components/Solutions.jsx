@@ -72,7 +72,7 @@ export default function Solutions() {
 			<img
 				src={accentImage}
 				alt="Accent"
-				className="absolute top-0 right-0 w-auto h-[400px] object-scale-down opacity-100 pointer-events-none"
+				className="absolute top-0 right-0 w-auto h-[400px] object-scale-down opacity-30 md:opacity-100 pointer-events-none"
 			/>
 			<div className="max-w-[100vw] md:max-w-[90vw] mx-auto px-4 md:px-8 relative z-10">
 				{/* Section Title */}
@@ -90,7 +90,7 @@ export default function Solutions() {
 
 				{/* Main Content */}
 				<div
-					className="relative h-[420px] sm:h-[500px] md:h-[60vh] overflow-hidden cursor-grab active:cursor-grabbing"
+					className="relative h-[560px] sm:h-[600px] md:h-[60vh] overflow-hidden cursor-grab active:cursor-grabbing"
 					onTouchStart={handleTouchStart}
 					onTouchEnd={handleTouchEnd}
 					onMouseDown={handleMouseDown}
@@ -106,7 +106,7 @@ export default function Solutions() {
 						{solutionsData.map((solution, idx) => (
 							<div
 								key={idx}
-								className={`flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-8 w-full h-[420px] sm:h-[500px] md:h-[60vh] flex-shrink-0 px-2 sm:px-4 transition-opacity duration-1000 ${activeIndex === idx ? "opacity-100" : "opacity-0"
+								className={`flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-8 w-full h-[560px] sm:h-[500px] md:h-[60vh] flex-shrink-0 px-2 sm:px-4 transition-opacity duration-1000 ${activeIndex === idx ? "opacity-100" : "opacity-0"
 									}`}
 							>
 								{/* Left: Image */}
@@ -146,7 +146,7 @@ export default function Solutions() {
 					</div>
 
 					{/* Number navigation */}
-					<div className="absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-2 items-center md:items-end w-full md:w-auto bottom-2 md:bottom-auto justify-center">
+					<div className="absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-2 items-center md:items-end w-full md:w-auto bottom-2 md:bottom-auto justify-between md:justify-center">
 						{solutionsData.map((_, idx) => (
 							<button
 								key={idx}
@@ -167,7 +167,7 @@ export default function Solutions() {
 			<img
 				src={accentImage}
 				alt="Accent"
-				className="absolute bottom-0 left-0 w-auto md:h-[500px] rotate-180 object-scale-down opacity-100 pointer-events-none z-10"
+				className="absolute bottom-0 left-0 w-auto h-[100px] md:h-[500px] rotate-180 object-scale-down opacity-100 pointer-events-none z-10"
 			/>
 		</section>
 	);
